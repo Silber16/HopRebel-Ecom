@@ -10,7 +10,7 @@ export default function Productos() {
   const [productos, setProductos] = useState([])
 
   useEffect(() => {
-    axios.get(categoria ? `${import.meta.env.VITE_BACK_URI}/api/productos/category/${categoria}` : `${import.meta.env.VITE_BACK_URI}/api/productos`)
+    axios.get(categoria ? `https://hoprebel-ecom.onrender.com/api/productos/category/${categoria}` : `https://hoprebel-ecom.onrender.com/api/productos`)
       .then(response => {
         if (response.data.length <= 0) {
         return console.error('its empty')
