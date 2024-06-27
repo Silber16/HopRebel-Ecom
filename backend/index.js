@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.json())
 
 app.get('/', (req, res) => {
-    res.send('funcando')
+    res.send('ok')
 })
 
 app.use('/api/productos', productRouter);
