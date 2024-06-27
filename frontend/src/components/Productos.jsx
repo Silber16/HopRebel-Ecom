@@ -12,6 +12,7 @@ export default function Productos() {
   useEffect(() => {
     axios.get(categoria ? `${import.meta.env.VITE_BACK_URI}/api/productos/category/${categoria}` : `${import.meta.env.VITE_BACK_URI}/api/productos`)
       .then(response => {
+        console.log(response)
         if (response.data.length <= 0) {
         return console.error('its empty')
         }
