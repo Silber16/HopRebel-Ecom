@@ -8,15 +8,15 @@ export default function Productos() {
 
   const {categoria} = useParams()
   const [productos, setProductos] = useState([])
-
+  const [loading, setLoading] = useState(true)
   useEffect(() => {
     axios.get(categoria ? `${import.meta.env.VITE_BACK_URI}/api/productos/category/${categoria}` : `${import.meta.env.VITE_BACK_URI}/api/productos`)
       .then(response => {
-        console.log(response)
         if (response.data.length <= 0) {
         return console.error('its empty')
         }
-        setProductos(categoria ? response.data : response.data)
+        setProductos(response.data)
+        setLoading(false)
         })
       .catch(err => console.error(err + ' fetch error'))
     }, [categoria])
@@ -26,10 +26,12 @@ export default function Productos() {
           <label className='productos-container__label'>{categoria ? productos.categoria : "TODOS LOS PRODUCTOS"}</label>
           <div className='prodsContainer'>
                 {productos.map((prod, index) => (
-                <Producto 
-                  producto={prod}
-                  key={index}
-                />
+                loading 
+                ? <Skeleton className='skeleton_prods'/>
+                : <Producto 
+                     producto={prod}
+                     key={index}
+                   />
                 ))}
           </div>
 

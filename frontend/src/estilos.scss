@@ -108,7 +108,7 @@ header {
 .home-container {
     width: 100vw;
     height: 100vh;
-    // background-image: url('https://firebasestorage.googleapis.com/v0/b/e-commerce-mern-2705b.appspot.com/o/young-female-wearing-black-short-sleeve-t-shirt-with-white-wall.jpg?alt=media&token=4d316c7a-339e-4bcd-a4ad-bfa64961729b');
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/e-commerce-mern-2705b.appspot.com/o/young-female-wearing-black-short-sleeve-t-shirt-with-white-wall.jpg?alt=media&token=4d316c7a-339e-4bcd-a4ad-bfa64961729b');
     background-size:cover;
     background-attachment: fixed;
     overflow: hidden;
@@ -130,7 +130,6 @@ header {
         }
     }
 }
-
 
 .productos-container {
 
@@ -225,10 +224,12 @@ header {
                 }
             }
         }
+        .skeleton_prods {
+            height: 40vh;
+            width: 23vw;
+        }
     }
-    
 }
-
 
 .cartContainer {
     position: fixed;
@@ -320,7 +321,6 @@ header {
     justify-content: center;
     height: 90vh;
     align-items: center;
-
     .prodsDetail {
         display: grid;
         grid-template-columns: 45% 55%;
@@ -348,6 +348,10 @@ header {
             }
         }
     }
+    .skeleton_detail {
+        width: 60vw;
+        height: 50vh;
+    }
 }
 
 .carrusel {
@@ -355,6 +359,7 @@ header {
     position: relative;
     &__img {
         width: 100%;
+        min-height: 35vh;
     }
     button {
        position: absolute;
@@ -372,6 +377,7 @@ header {
         left: 40%;
         width: 20%;
         text-align: center;
+        justify-content: center;
         display: flex;
     }
     &__foll {
@@ -536,9 +542,11 @@ footer {
             gap: .5rem 1rem;
             .prodsContainer__container {
                 width: 44%;
-               
             }
-            
+        .skeleton_prods {
+            height: 30vh;
+            width: 40vw;
+        }
         }
     }
     .prodsDetailContainer{
@@ -599,6 +607,11 @@ footer {
                     width: 40vw;
                 }
             }
+        }
+    }
+    .carrusel {
+        &__img {
+            min-height: 30vh;
         }
     }
     }

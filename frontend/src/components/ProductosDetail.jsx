@@ -3,17 +3,21 @@ import { useParams } from 'react-router-dom';
 import { CartContext } from '../CartProvider.jsx';
 import Carrusel from './Carrusel.jsx';
 import axios from 'axios'
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 export const ProductosDetail = () => {
   const { name } = useParams();
   const { handleAgregar } = useContext(CartContext);
   const [item, setItem] = useState({})  
+  const [loading, setLoading] = useState(true)
   
   async function cargarItem() {
     try {
       const response = await axios.get(`${import.meta.env.VITE_BACK_URI}/api/productos/nombre/${name}`)
       const responseData = await response.data
       setItem(responseData)
+      setLoading(false)
     } catch (error) {
       console.error(error + " hola errrorrrr")
     }
@@ -28,21 +32,18 @@ export const ProductosDetail = () => {
 
   return (
     <div className='prodsDetailContainer'>
-      {item ? (
-        <div className='prodsDetail'>
-          <Carrusel item={item} />
-          <div className='prodsDetail__info'>
-            <h2 className='prodsDetail__info--name'>{item.name}</h2>
-            <p className='prodsDetail__info--price'>${item.precio}</p>
-            <p className='prodsDetail__info--desc'>{item.desc}</p>
-            <button className="prodsDetail__info--add" onClick={() => { handleAgregar(item) }}>Agregar al carrito</button>
-          </div>
-        </div>
-      ) : (
-        <div className='prodsContainer'>
-          <p>Producto no encontrado</p>
-        </div>
-      )}
+      {loading
+        ?  (<Skeleton className='skeleton_detail'/>) 
+        :  (<div className='prodsDetail'>
+              <Carrusel item={item} />
+              <div className='prodsDetail__info'>
+                <h2 className='prodsDetail__info--name'>{item.name}</h2>
+                <p className='prodsDetail__info--price'>${item.precio}</p>
+                <p className='prodsDetail__info--desc'>{item.desc}</p>
+                <button className="prodsDetail__info--add" onClick={() => { handleAgregar(item) }}>Agregar al carrito</button>
+              </div>
+            </div>)
+        }
     </div>
   );
 };

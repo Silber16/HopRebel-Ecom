@@ -2,6 +2,7 @@
   "dependencies": {
     "@mercadopago/sdk-react": "0.0.18",
     "jsonwebtoken": "9.0.2",
-    "mercadopago": "2.0.9"
+    "mercadopago": "2.0.9",
+    "react-loading-skeleton": "^3.4.0"
   }
 }

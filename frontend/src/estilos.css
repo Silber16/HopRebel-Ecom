@@ -60,6 +60,7 @@ header .menuToggle span {
 }
 header .navBar-container {
   background-color: var(--l-color);
+  box-shadow: 0px 0px 5px -1px rgba(178, 178, 178, 0.88);
   padding: 6vh 4rem 0 2rem;
   padding-top: 18vh;
   right: 0;
@@ -84,7 +85,7 @@ header .navBar-container .nav--ul__li a {
   text-decoration: none;
   color: var(--d-color);
   font-size: 1.8rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 header .navBar-container .nav--ul hr {
   color: var(--d-color);
@@ -123,6 +124,12 @@ header .navBar-container.show {
 }
 
 .productos-container {
+  view-timeline-name: --prods;
+  view-timeline-axis: block;
+  animation-timeline: --prods;
+  animation-name: showProds;
+  animation-range: entry 20% cover 45%;
+  animation-fill-mode: both;
   background-color: var(--l-color);
   min-height: 100vh;
   padding-top: 12vh;
@@ -135,10 +142,20 @@ header .navBar-container.show {
   padding: 0;
   margin-top: 12vh;
 }
+@keyframes showProds {
+  from {
+    opacity: 0;
+    scale: 90%;
+  }
+  to {
+    opacity: 100;
+    scale: 100%;
+  }
+}
 .productos-container__label {
   text-align: center;
   font-size: 2rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--d-color);
 }
 .productos-container .prodsContainer {
@@ -197,6 +214,10 @@ header .navBar-container.show {
   box-shadow: 0px 0px 8px -2px rgba(153, 153, 153, 0.88);
   border-radius: 2px;
 }
+.productos-container .prodsContainer .skeleton_prods {
+  height: 40vh;
+  width: 23vw;
+}
 
 .cartContainer {
   position: fixed;
@@ -211,6 +232,7 @@ header .navBar-container.show {
   z-index: 1000;
   display: grid;
   grid-template-rows: 12% 63% 25%;
+  box-shadow: 0px 0px 5px -1px rgba(178, 178, 178, 0.88);
 }
 .cartContainer__cartHeader {
   grid-row: 1;
@@ -311,6 +333,10 @@ header .navBar-container.show {
   width: 20vw;
   padding: 0.6rem 0;
 }
+.prodsDetailContainer .skeleton_detail {
+  width: 60vw;
+  height: 50vh;
+}
 
 .carrusel {
   grid-column: 1;
@@ -318,6 +344,7 @@ header .navBar-container.show {
 }
 .carrusel__img {
   width: 100%;
+  min-height: 35vh;
 }
 .carrusel button {
   position: absolute;
@@ -335,6 +362,7 @@ header .navBar-container.show {
   left: 40%;
   width: 20%;
   text-align: center;
+  justify-content: center;
   display: flex;
 }
 .carrusel__foll {
@@ -491,6 +519,10 @@ footer .footerRight__form--btn {
   .productos-container .prodsContainer .prodsContainer__container {
     width: 44%;
   }
+  .productos-container .prodsContainer .skeleton_prods {
+    height: 30vh;
+    width: 40vw;
+  }
   .prodsDetailContainer .prodsDetail {
     gap: 3rem;
     width: 80%;
@@ -545,6 +577,9 @@ footer .footerRight__form--btn {
   .prodsDetailContainer .prodsDetail__info--add {
     margin-top: 1rem;
     width: 40vw;
+  }
+  .carrusel__img {
+    min-height: 30vh;
   }
 }
 @media screen and (max-width: 425px) {

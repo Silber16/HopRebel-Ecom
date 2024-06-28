@@ -16,11 +16,13 @@ export default function Carrito({hideCart}) {
   }
 
   useEffect(() => { 
-      // const storageCart = localStorage.getItem('cart')
-      //  if (storageCart.length < 1) {
-      //     return 
-      //  }
-      //   setCarrito(JSON.parse(storageCart))
+      const storageCart = localStorage.getItem('cart')
+       if (storageCart) {
+          if (storageCart.length < 1) {
+            return 
+            }
+          setCarrito(JSON.parse(storageCart))
+       }
   }, []);
 
   const cartHeader = (
