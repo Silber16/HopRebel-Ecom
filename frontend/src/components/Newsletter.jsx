@@ -15,7 +15,7 @@ export const Newsletter = () => {
 
   return (
       <div className='subContainer footerRight'>
-      <label className='footerRight__lbl'>suscribite a nuestro newsletter para conocer nuevas ofertas y lanzamientos!</label>
+      <label className='footerRight__lbl'>Suscribite a nuestro newsletter para conocer nuevas ofertas y lanzamientos!</label>
       {registrado && <p>Gracias por registrarte. Recibiras nuestras ofertas por mail!</p>}
       <form className='footerRight__form' onSubmit={handleSubmit(enviar)}>
           <input className='footerRight__form--inp' type="email" placeholder='Mail' {...register("mail")} />

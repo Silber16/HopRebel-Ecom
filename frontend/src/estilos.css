@@ -154,8 +154,9 @@ header .navBar-container.show {
 }
 .productos-container__label {
   text-align: center;
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 550;
+  max-width: 80vw;
   color: var(--d-color);
 }
 .productos-container .prodsContainer {
@@ -184,7 +185,7 @@ header .navBar-container.show {
   gap: 0.5rem;
 }
 .productos-container .prodsContainer .prodsContainer__container .prods__info--name {
-  font-size: 1.3rem;
+  font-size: 1rem;
   color: var(--d-color);
 }
 .productos-container .prodsContainer .prodsContainer__container .prods__info--price {
@@ -206,7 +207,7 @@ header .navBar-container.show {
   border-radius: 2px;
 }
 .productos-container .prodsContainer .prodsContainer__container .prods__btns--det {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   padding: 0.2rem 0.4rem 0.2rem 0.4rem;
   text-decoration: none;
   color: var(--l-color);
@@ -244,6 +245,9 @@ header .navBar-container.show {
 .cartContainer__cartHeader--label {
   font-size: 1.5rem;
   font-weight: bold;
+}
+.cartContainer__cartHeader--btn {
+  color: var(--d-color);
 }
 .cartContainer__ul {
   overflow-y: scroll;
@@ -580,6 +584,9 @@ footer .footerRight__form--btn {
   }
   .carrusel__img {
     min-height: 30vh;
+  }
+  .footerRight__lbl {
+    font-size: 0.8rem;
   }
 }
 @media screen and (max-width: 425px) {

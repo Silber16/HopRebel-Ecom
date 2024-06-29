@@ -164,8 +164,9 @@ header {
     margin-top: 12vh;
     &__label {
         text-align: center;
-        font-size: 2rem;
-        font-weight: 600;
+        font-size: 1.5rem;
+        font-weight: 550;
+        max-width: 80vw;
         color: var(--d-color);
     }
     .prodsContainer {
@@ -191,7 +192,7 @@ header {
                 flex-direction: column;
                 gap: .5rem;
                 &--name {
-                    font-size: 1.3rem;
+                    font-size: 1rem;
                     color: var(--d-color);
                 }
                 &--price {
@@ -213,7 +214,7 @@ header {
                     border-radius: 2px;
                 }
                 &--det {
-                    font-size: 1.2rem;
+                    font-size: 1.1rem;
                     padding: .2rem .4rem .2rem .4rem;
                     text-decoration: none;
                     color: var(--l-color);
@@ -255,8 +256,9 @@ header {
             font-size: 1.5rem;
             font-weight: bold;
         }
-        // &--btn {
-        // }
+        &--btn {
+            color: var(--d-color);
+        }
     }
        
     &__ul {
@@ -612,6 +614,11 @@ footer {
     .carrusel {
         &__img {
             min-height: 30vh;
+        }
+    }
+    .footerRight {
+        &__lbl {
+            font-size: .8rem;
         }
     }
     }

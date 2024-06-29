@@ -3,12 +3,15 @@ import '../estilos.css'
 import Producto from './Producto.jsx';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 export default function Productos() {
 
   const {categoria} = useParams()
   const [productos, setProductos] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [prodsLoading, setProdsLoading] = useState(true)
+
   useEffect(() => {
     axios.get(categoria ? `${import.meta.env.VITE_BACK_URI}/api/productos/category/${categoria}` : `${import.meta.env.VITE_BACK_URI}/api/productos`)
       .then(response => {
@@ -16,7 +19,7 @@ export default function Productos() {
         return console.error('its empty')
         }
         setProductos(response.data)
-        setLoading(false)
+        setProdsLoading(false)
         })
       .catch(err => console.error(err + ' fetch error'))
     }, [categoria])
@@ -26,7 +29,7 @@ export default function Productos() {
           <label className='productos-container__label'>{categoria ? productos.categoria : "TODOS LOS PRODUCTOS"}</label>
           <div className='prodsContainer'>
                 {productos.map((prod, index) => (
-                loading 
+                prodsLoading 
                 ? <Skeleton className='skeleton_prods'/>
                 : <Producto 
                      producto={prod}
