@@ -140,7 +140,7 @@ header .navBar-container.show {
   flex-wrap: wrap;
   gap: 1rem;
   padding: 0;
-  margin-top: 12vh;
+  margin-top: 10vh;
 }
 @keyframes showProds {
   from {
@@ -153,6 +153,7 @@ header .navBar-container.show {
   }
 }
 .productos-container__label {
+  margin-top: 5vh;
   text-align: center;
   font-size: 1.5rem;
   font-weight: 550;
@@ -278,15 +279,18 @@ header .navBar-container.show {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  width: 100%;
 }
 .cartContainer .cartTotal__p {
   font-size: 1.5rem;
   font-weight: bold;
 }
 .cartContainer .cartTotal__btn {
-  width: 30vw;
+  width: 100%;
   background-color: var(--d-color);
-  color: #fff;
+  color: var(--l-color);
+  border-radius: 2px;
+  box-shadow: 0px 0px 5px -1px rgba(146, 146, 146, 0.88);
   border: none;
   font-size: 1.3rem;
   padding: 0.5rem;
@@ -312,14 +316,14 @@ header .navBar-container.show {
 }
 .prodsDetailContainer .prodsDetail {
   display: grid;
-  grid-template-columns: 45% 55%;
+  grid-template-columns: 48% 52%;
   width: 60vw;
   padding: 2rem 2rem 3rem 2rem;
   box-shadow: 0px 0px 8px -2px rgba(158, 158, 158, 0.88);
 }
 .prodsDetailContainer .prodsDetail__info {
   grid-column: 2;
-  padding: 1rem 4rem;
+  padding: 1rem 3rem;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -334,8 +338,9 @@ header .navBar-container.show {
   color: var(--l-color);
   border: none;
   font-size: 1.2rem;
-  width: 20vw;
-  padding: 0.6rem 0;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.6rem 1rem;
 }
 .prodsDetailContainer .skeleton_detail {
   width: 60vw;
@@ -349,6 +354,7 @@ header .navBar-container.show {
 .carrusel__img {
   width: 100%;
   min-height: 35vh;
+  padding: 1rem;
 }
 .carrusel button {
   position: absolute;
@@ -358,7 +364,7 @@ header .navBar-container.show {
   padding: 0;
 }
 .carrusel button span {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 .carrusel__spanContainer {
   position: absolute;
@@ -580,7 +586,6 @@ footer .footerRight__form--btn {
   }
   .prodsDetailContainer .prodsDetail__info--add {
     margin-top: 1rem;
-    width: 40vw;
   }
   .carrusel__img {
     min-height: 30vh;
@@ -608,6 +613,9 @@ footer .footerRight__form--btn {
   .productos-container .prodsContainer .prodsContainer__container {
     font-size: 1rem;
     width: 47%;
+  }
+  .prodsDetailContainer .prodsDetail {
+    width: 90%;
   }
   .footerLeft img {
     height: 8vh;

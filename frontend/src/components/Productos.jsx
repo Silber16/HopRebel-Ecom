@@ -26,7 +26,7 @@ export default function Productos() {
 
     return (
       <section className='productos-container'>
-          <label className='productos-container__label'>{categoria ? productos.categoria : "TODOS LOS PRODUCTOS"}</label>
+          <label className='productos-container__label'>{categoria ? categoria.toUpperCase() : "TODOS LOS PRODUCTOS"}</label>
           <div className='prodsContainer'>
                 {productos.map((prod, index) => (
                 prodsLoading 
