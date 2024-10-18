@@ -12,11 +12,11 @@ export default function ContactoRedes() {
                 </div>
                 <div className='linkContainer'>
                     <span className="material-symbols-outlined">sms</span>
-                    <a>+54 9 11 12345678</a>
+                    <a>+54 9 11 12234498</a>
                 </div>
                 <div className='linkContainer'>
                     <span className="material-symbols-outlined">call</span>
-                    <a>+54 9 11 12345678</a>
+                    <a>+54 9 11 12234498</a>
                 </div>
             </div>
         </div>
