@@ -30,7 +30,7 @@ export default function Productos() {
           <div className='prodsContainer'>
                 {productos.map((prod, index) => (
                 prodsLoading 
-                ? <Skeleton className='skeleton_prods'/>
+                ? <p>Cargando productos...</p>
                 : <Producto 
                      producto={prod}
                      key={index}
